@@ -1,0 +1,73 @@
+\mode<presentation>
+
+
+
+\setbeamertemplate{background}{
+	\begin{tikzpicture}
+	\useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+	\fill[color=themegray] (2.05,2) rectangle (\the\paperwidth,\the\paperheight);
+	\fill[color=themeblue] (0,0) rectangle(1.95,1.9);
+	\fill[color=themeblue] (0,0) rectangle(1.95,\the\paperheight);
+	\fill[color=themeorange] (2.05,0) rectangle(\the\paperwidth,1.9);
+	\ifnum\thepage>1\relax%
+	\fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+	\fi
+	\end{tikzpicture}
+}
+
+\setbeamercolor{section in head/foot}{fg=white, bg=themeblue}
+
+\makeatletter
+\setbeamertemplate{footline}
+{
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+			\usebeamerfont{author in head/foot}\insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+			\usebeamerfont{title in head/foot}\insertshorttitle
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{section in head/foot}%
+			\usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+			\insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+	\end{beamercolorbox}}%
+	\vskip0pt%
+}
+\makeatother
+
+% Title page
+\defbeamertemplate*{title page}{UniBonn}[1][]
+{ 
+	\vskip3.5cm%
+	\begin{beamercolorbox}[wd=\paperwidth, leftskip = 3cm, rightskip = 1cm, #1]{title page header}
+		\usebeamerfont{title}\inserttitle\par%
+	\end{beamercolorbox}%
+	\vskip3.5cm%
+	\begin{beamercolorbox}[wd=\paperwidth,#1,leftskip=2.5cm]{author}
+		\usebeamerfont{author}\insertauthor%
+	\end{beamercolorbox}
+	\vskip0.2cm%
+	\begin{beamercolorbox}[wd=\paperwidth,#1, leftskip=2.5cm]{date}
+		\usebeamerfont{date}\insertdate%
+	\end{beamercolorbox}
+	\vfill
+}
+
+\defbeamertemplate*{frame page}{UniBonn}[1][]
+{ 
+		\vskip2cm%
+	\begin{beamercolorbox}[wd=12cm,leftskip=2cm,sep=8pt,#1]{title page header}
+		\usebeamerfont{title}\inserttitle\par%
+	\end{beamercolorbox}%
+	
+}
+
+% Items
+\setbeamertemplate{items}[circle]
+\setbeamertemplate{enumerate subitem}[square]
+\setbeamertemplate{itemize subitem}[default]
+\setbeamertemplate{sections/subsections in toc}[square]
+
+\mode
+<all>
