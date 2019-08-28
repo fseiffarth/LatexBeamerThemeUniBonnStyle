@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[aspectratio=1610]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \title{Latex Beamer Bonn Style}
@@ -7,11 +7,16 @@
 
 \usetheme{UniBonn}
 
+
 \begin{document}
 	\begin{frame}[plain]
 	\titlepage
 \end{frame}
 
+\begin{intro}
+\frametitle{Title}
+\framesubtitle{The proof uses \textit{reductio ad absurdum}.} 
+\end{intro}
 
 \begin{frame} 
 \frametitle{There Is No Largest Prime Number} 
@@ -25,6 +30,12 @@
 	\item<1-> But $q + 1$ is greater than $1$, thus divisible by some prime
 	number not in the first $p$ numbers.
 \end{enumerate}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Block title}
+	Inhalt...
+\end{block}
 \end{frame}
 
 \begin{frame}{A longer title}

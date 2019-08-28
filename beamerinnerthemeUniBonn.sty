@@ -1,57 +1,53 @@
 \mode<presentation>
 
 
-
-\setbeamertemplate{background}{
-	\begin{tikzpicture}
-	\useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
-	\fill[color=themegray] (2.05,2) rectangle (\the\paperwidth,\the\paperheight);
-	\fill[color=themeblue] (0,0) rectangle(1.95,1.9);
-	\fill[color=themeblue] (0,0) rectangle(1.95,\the\paperheight);
-	\fill[color=themeorange] (2.05,0) rectangle(\the\paperwidth,1.9);
-	\ifnum\thepage>1\relax%
-	\fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
-	\fi
-	\end{tikzpicture}
-}
-
-\setbeamercolor{section in head/foot}{fg=white, bg=themeblue}
-
 \makeatletter
 \setbeamertemplate{footline}
 {
 	\leavevmode%
 	\hbox{%
-		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.75ex,dp=0.8ex,center]{section in head/foot}%
 			\usebeamerfont{author in head/foot}\insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}
 		\end{beamercolorbox}%
-		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.75ex,dp=0.8ex,center]{section in head/foot}%
 			\usebeamerfont{title in head/foot}\insertshorttitle
 		\end{beamercolorbox}%
-		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{section in head/foot}%
+		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.75ex,dp=0.8ex,right]{section in head/foot}%
 			\usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
-			\insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+			\insertframenumber{} / \inserttotalframenumber\hspace*{2.75ex} 
 	\end{beamercolorbox}}%
-	\vskip0pt%
+	\vskip0.2cm%
 }
 \makeatother
+
+
 
 % Title page
 \defbeamertemplate*{title page}{UniBonn}[1][]
 { 
-	\vskip3.5cm%
-	\begin{beamercolorbox}[wd=\paperwidth, leftskip = 3cm, rightskip = 1cm, #1]{title page header}
-		\usebeamerfont{title}\inserttitle\par%
-	\end{beamercolorbox}%
-	\vskip3.5cm%
-	\begin{beamercolorbox}[wd=\paperwidth,#1,leftskip=2.5cm]{author}
-		\usebeamerfont{author}\insertauthor%
+	\begin{beamercolorbox}[wd=\paperwidth, leftskip = 1cm]{}
+		\includegraphics{UNI_Bonn_Logo_Standard_RZ}
 	\end{beamercolorbox}
-	\vskip0.2cm%
-	\begin{beamercolorbox}[wd=\paperwidth,#1, leftskip=2.5cm]{date}
-		\usebeamerfont{date}\insertdate%
+	\vskip 1cm
+	\begin{beamercolorbox}[wd=\paperwidth]{}
+		\begin{beamercolorbox}[wd=0.8\paperwidth, ht=.15\paperheight,dp=1ex, leftskip = 2ex]{frametitle}
+			\usebeamerfont{title}\inserttitle\par%
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=0.1\paperwidth, ht=.15\paperheight,dp=1ex, leftskip = 2ex]{graybox}
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=0.1\paperwidth, ht=.15\paperheight,dp=1ex, leftskip = 2ex]{yellowbox}
+		\end{beamercolorbox}%
 	\end{beamercolorbox}
-	\vfill
+	\vskip 1cm
+			\begin{beamercolorbox}[wd=\paperwidth, leftskip = 2ex]{author}
+				\usebeamerfont{author}\insertauthor%
+			\end{beamercolorbox}
+		
+			\begin{beamercolorbox}[wd=\paperwidth, leftskip = 2ex]{date}
+				\usebeamerfont{date}\insertdate%
+			\end{beamercolorbox}
+
+	
 }
 
 \defbeamertemplate*{frame page}{UniBonn}[1][]
@@ -63,11 +59,51 @@
 	
 }
 
+
+\setbeamertemplate{frametitle}{
+	\vskip 0.5cm
+	\begin{beamercolorbox}[wd=\paperwidth]{}
+	\begin{beamercolorbox}[wd=0.8\paperwidth, ht=.125\paperheight,dp=1ex, leftskip = 2ex]{frametitle}
+		\usebeamerfont{frametitle}\insertframetitle\par%
+		\usebeamerfont{framesubtitle}\insertframesubtitle\par%
+	\end{beamercolorbox}%
+	\begin{beamercolorbox}[wd=0.1\paperwidth, ht=.125\paperheight,dp=1ex, leftskip = 2ex]{graybox}
+	\end{beamercolorbox}%
+	\begin{beamercolorbox}[wd=0.1\paperwidth, ht=.125\paperheight,dp=1ex, leftskip = 2ex]{yellowbox}
+\end{beamercolorbox}%
+\end{beamercolorbox}
+
+}
+
+
+
+\newenvironment{intro}[1][]{
+	{\setbeamertemplate{frametitle}{
+		\vskip 3cm
+	\begin{beamercolorbox}[wd=\paperwidth, ht=.1\paperheight]{frametitle}
+	\usebeamerfont{frametitle}\insertframetitle\par%
+	\end{beamercolorbox}%
+	}}
+
+	\setbeamertemplate{framesubtitle}{
+	\begin{beamercolorbox}[wd=\paperwidth, ht=.5\paperheight, center]{framesubtitle}
+		\usebeamerfont{framesubtitle}\insertframesubtitle\par%
+	\end{beamercolorbox}%
+}
+
+
+
+
+	\begin{frame}{#1}}{\end{frame}}
+
 % Items
 \setbeamertemplate{items}[circle]
 \setbeamertemplate{enumerate subitem}[square]
 \setbeamertemplate{itemize subitem}[default]
 \setbeamertemplate{sections/subsections in toc}[square]
+
+
+
 
 \mode
 <all>
