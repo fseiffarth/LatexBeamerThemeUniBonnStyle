@@ -6,6 +6,9 @@
 \RequirePackage{extarrows}
 \RequirePackage{chemfig}
 \RequirePackage{subcaption}
+\RequirePackage{ifthen}
+\RequirePackage[outline]{contour}
+\RequirePackage{enumerate}
 
 % Settings
 \useinnertheme{UniBonn}
@@ -13,11 +16,19 @@
 \usecolortheme{UniBonn}
 
 \setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{blocks}[rounded][shadow=true]  
+\setbeamertemplate{blocks}[rounded][shadow=true]
 
 
+\newcommand{\checkfor}[1]{%
+	\ifcsname#1\endcsname%
+	1
+	\else%
+	0
+	\fi%
+}
 
-
+\newcommand{\AddLogo}[1]{\newcommand{\TheLogo}{#1}}
+\newsavebox{\longestsec}% Box to save longest sectional heading
 
 
 \mode<all>

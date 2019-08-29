@@ -7,24 +7,44 @@
 
 \usetheme{UniBonn}
 
-
 \begin{document}
 	\begin{frame}[plain]
 	\titlepage
 \end{frame}
 
-\begin{intro}
+\begin{framecenter}
 \frametitle{Title}
 \framesubtitle{The proof uses \textit{reductio ad absurdum}.} 
-\end{intro}
+\end{framecenter}
 
+\begin{framevertical}
+	\frametitle{Title}
+	\framesubtitle{The proof uses \textit{reductio ad absurdum}.} 
+\end{framevertical}
+
+
+\begin{framecontent}
+	\frametitle{Table of contents}
+	\framesubtitle{The content of the presentation} 
+\end{framecontent}
+
+
+
+\begin{frameblank}
+Eine Folie ohne Titel
+\end{frameblank}
+
+\section{The first section}
 \begin{frame} 
 \frametitle{There Is No Largest Prime Number} 
 \framesubtitle{The proof uses \textit{reductio ad absurdum}.} 
 \begin{theorem}
 	There is no largest prime number. \end{theorem} 
-\begin{enumerate} 
+\begin{enumerate}
 	\item<1-| alert@1> Suppose $p$ were the largest prime number. 
+	\begin{enumerate}
+		\item Subitem
+	\end{enumerate}
 	\item<2-> Let $q$ be the product of the first $p$ numbers. 
 	\item<3-> Then $q+1$ is not divisible by any of them. 
 	\item<1-> But $q + 1$ is greater than $1$, thus divisible by some prime
@@ -32,17 +52,25 @@
 \end{enumerate}
 \end{frame}
 
+\section{The second section}
 \begin{frame}
 \begin{block}{Block title}
 	Inhalt...
 \end{block}
 \end{frame}
 
+\section{The third section}
 \begin{frame}{A longer title}
 \begin{itemize}
 \item one
 \item two
 \end{itemize}
 \end{frame}
+
+\begin{frameverticalcontent}
+	\frametitle{Table of contents}
+	\framesubtitle{The content of the presentation} 
+\end{frameverticalcontent}
+
 
 \end{document}

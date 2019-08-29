@@ -1,41 +1,15 @@
 \mode<presentation>
 
-
-\makeatletter
-\setbeamertemplate{footline}
-{
-	\leavevmode%
-	\hbox{%
-		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.75ex,dp=0.8ex,center]{section in head/foot}%
-			\usebeamerfont{author in head/foot}\insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}
-		\end{beamercolorbox}%
-		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.75ex,dp=0.8ex,center]{section in head/foot}%
-			\usebeamerfont{title in head/foot}\insertshorttitle
-		\end{beamercolorbox}%
-		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.75ex,dp=0.8ex,right]{section in head/foot}%
-			\usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
-			\insertframenumber{} / \inserttotalframenumber\hspace*{2.75ex} 
-	\end{beamercolorbox}}%
-	\vskip0.2cm%
-}
-\makeatother
-
-
-
 % Title page
 \defbeamertemplate*{title page}{UniBonn}[1][]
 { 
-	\begin{beamercolorbox}[wd=\paperwidth, leftskip = 1cm]{}
-		\includegraphics{UNI_Bonn_Logo_Standard_RZ}
-	\end{beamercolorbox}
-	\vskip 1cm
 	\begin{beamercolorbox}[wd=\paperwidth]{}
-		\begin{beamercolorbox}[wd=0.8\paperwidth, ht=.15\paperheight,dp=1ex, leftskip = 2ex]{frametitle}
+		\begin{beamercolorbox}[sep=0.25em, wd=0.8\paperwidth, ht=.15\paperheight, leftskip = 2ex]{frametitle}
 			\usebeamerfont{title}\inserttitle\par%
 		\end{beamercolorbox}%
-		\begin{beamercolorbox}[wd=0.1\paperwidth, ht=.15\paperheight,dp=1ex, leftskip = 2ex]{graybox}
+		\begin{beamercolorbox}[wd=0.1\paperwidth, ht=.15\paperheight, leftskip = 2ex]{graybox}
 		\end{beamercolorbox}%
-		\begin{beamercolorbox}[wd=0.1\paperwidth, ht=.15\paperheight,dp=1ex, leftskip = 2ex]{yellowbox}
+		\begin{beamercolorbox}[wd=0.1\paperwidth, ht=.15\paperheight, leftskip = 2ex]{yellowbox}
 		\end{beamercolorbox}%
 	\end{beamercolorbox}
 	\vskip 1cm
@@ -46,60 +20,143 @@
 			\begin{beamercolorbox}[wd=\paperwidth, leftskip = 2ex]{date}
 				\usebeamerfont{date}\insertdate%
 			\end{beamercolorbox}
-
+	\vskip 2cm
 	
+	\begin{beamercolorbox}[wd=\paperwidth]{}
+		\ifthenelse{\checkfor{TheLogo} = 0}{		
+			\begin{beamercolorbox}[wd=\paperwidth, right]{}
+				\includegraphics[scale = 0.8]{UNI_Bonn_Logo_Standard_RZ}
+			\end{beamercolorbox}
+		}{	
+			\begin{beamercolorbox}[wd=.45\paperwidth, leftskip = 1cm]{}\TheLogo
+			\end{beamercolorbox}
+			\begin{beamercolorbox}[wd=.45\paperwidth, right]{}
+				\includegraphics[scale = 0.8]{UNI_Bonn_Logo_Standard_RZ}
+			\end{beamercolorbox}
+		}
+		
+	\end{beamercolorbox}	
 }
 
-\defbeamertemplate*{frame page}{UniBonn}[1][]
-{ 
-		\vskip2cm%
-	\begin{beamercolorbox}[wd=12cm,leftskip=2cm,sep=8pt,#1]{title page header}
-		\usebeamerfont{title}\inserttitle\par%
-	\end{beamercolorbox}%
-	
+% Footline
+\setbeamertemplate{footline}
+{
+	\begin{beamercolorbox}[wd=\paperwidth,ht=2.75ex,dp=0.8ex]{bluebox}
+		\begin{beamercolorbox}[wd=.4\paperwidth,ht=2.75ex,dp=0.8ex, leftskip = 2ex]{whitetext}%
+			\usebeamerfont{author in head/foot}\insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.35\paperwidth,ht=2.75ex,dp=0.8ex, left]{whitetext}%
+			\usebeamerfont{title in head/foot}\insertshorttitle
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.25\paperwidth,ht=2.75ex,dp=0.8ex,right]{whitetext}%
+			\usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+			\insertframenumber{} / \inserttotalframenumber\hspace*{2.75ex} 
+		\end{beamercolorbox}%
+	\end{beamercolorbox}
+	\vskip0.2cm%
 }
 
-
+% Frame Title
 \setbeamertemplate{frametitle}{
 	\vskip 0.5cm
 	\begin{beamercolorbox}[wd=\paperwidth]{}
-	\begin{beamercolorbox}[wd=0.8\paperwidth, ht=.125\paperheight,dp=1ex, leftskip = 2ex]{frametitle}
+	\begin{beamercolorbox}[sep=1em, wd=0.8\paperwidth, ht=.15\paperheight, leftskip = 2ex]{frametitle}
 		\usebeamerfont{frametitle}\insertframetitle\par%
 		\usebeamerfont{framesubtitle}\insertframesubtitle\par%
 	\end{beamercolorbox}%
-	\begin{beamercolorbox}[wd=0.1\paperwidth, ht=.125\paperheight,dp=1ex, leftskip = 2ex]{graybox}
+	\begin{beamercolorbox}[wd=0.1\paperwidth, ht=.15\paperheight, leftskip = 2ex]{graybox}
 	\end{beamercolorbox}%
-	\begin{beamercolorbox}[wd=0.1\paperwidth, ht=.125\paperheight,dp=1ex, leftskip = 2ex]{yellowbox}
+	\begin{beamercolorbox}[wd=0.1\paperwidth, ht=.15\paperheight, leftskip = 2ex]{yellowbox}
 \end{beamercolorbox}%
 \end{beamercolorbox}
 
 }
 
 
-
-\newenvironment{intro}[1][]{
-	{\setbeamertemplate{frametitle}{
-		\vskip 3cm
-	\begin{beamercolorbox}[wd=\paperwidth, ht=.1\paperheight]{frametitle}
-	\usebeamerfont{frametitle}\insertframetitle\par%
-	\end{beamercolorbox}%
-	}}
-
-	\setbeamertemplate{framesubtitle}{
-	\begin{beamercolorbox}[wd=\paperwidth, ht=.5\paperheight, center]{framesubtitle}
-		\usebeamerfont{framesubtitle}\insertframesubtitle\par%
-	\end{beamercolorbox}%
-}
-
-
-
-
+% Frame with centered title
+\newenvironment{framecenter}[1][]{
+	% Frame Title
+	\setbeamertemplate{frametitle}{
+		\vskip 4cm
+		\begin{beamercolorbox}[wd=\paperwidth]{}
+			\begin{beamercolorbox}[sep=1em, wd=0.8\paperwidth, ht=.15\paperheight, leftskip = 2ex]{frametitle}
+				\usebeamerfont{frametitle}\insertframetitle\par%
+				\usebeamerfont{framesubtitle}\insertframesubtitle\par%
+			\end{beamercolorbox}%
+			\begin{beamercolorbox}[wd=0.1\paperwidth, ht=.15\paperheight, leftskip = 2ex]{graybox}
+			\end{beamercolorbox}%
+			\begin{beamercolorbox}[wd=0.1\paperwidth, ht=.15\paperheight, leftskip = 2ex]{yellowbox}
+			\end{beamercolorbox}%
+		\end{beamercolorbox}}
 	\begin{frame}{#1}}{\end{frame}}
+
+
+% Frame for Content
+\newenvironment{framecontent}[1][]{
+	% Frame Title
+	\setbeamertemplate{frametitle}{
+		\vskip0.5cm
+		\begin{beamercolorbox}[wd=\paperwidth]{}
+			\begin{beamercolorbox}[sep=1em, wd=0.8\paperwidth, ht=.15\paperheight, leftskip = 2ex]{frametitle}
+				\usebeamerfont{frametitle}\insertframetitle\par%
+				\usebeamerfont{framesubtitle}\insertframesubtitle\par%
+			\end{beamercolorbox}%
+			\begin{beamercolorbox}[wd=0.1\paperwidth, ht=.15\paperheight, leftskip = 2ex]{graybox}
+			\end{beamercolorbox}%
+			\begin{beamercolorbox}[wd=0.1\paperwidth, ht=.15\paperheight, leftskip = 2ex]{yellowbox}
+			\end{beamercolorbox}%
+	\end{beamercolorbox}}
+	\begin{frame}{#1}\setbeamercolor{section in toc}{fg=black}\tableofcontents}{\end{frame}}
+
+
+% Frame of vertical style
+\newenvironment{framevertical}[1][]{
+	% Frame Title
+	\setbeamertemplate{frametitle}{
+		\begin{beamercolorbox}[wd=\paperwidth, ht=0.8\paperheight]{}
+			\begin{beamercolorbox}[sep=1em, wd=0.2\paperwidth, ht=.6\paperheight]{frametitle}
+				\usebeamerfont{frametitle}\insertframetitle\par%
+				\usebeamerfont{framesubtitle}\insertframesubtitle\par%
+			\end{beamercolorbox}%
+		
+			\begin{beamercolorbox}[wd=0.2\paperwidth, ht=.15\paperheight]{graybox}
+			\end{beamercolorbox}%
+		
+			\begin{beamercolorbox}[wd=0.2\paperwidth, ht=.15\paperheight]{yellowbox}
+			\end{beamercolorbox}%
+	\end{beamercolorbox}}
+	\begin{frame}{#1}}{\end{frame}}
+
+
+% Frame of vertical style
+\newenvironment{frameverticalcontent}[1][]{
+	% Frame Title
+	\setbeamertemplate{frametitle}{
+		\begin{beamercolorbox}[wd=\paperwidth, ht=0.8\paperheight]{}
+			\begin{beamercolorbox}[dp=4em, wd=0.2\paperwidth, ht=.6\paperheight]{bluebox}
+			\tiny{\tableofcontents[currentsection]}
+			\end{beamercolorbox}%
+			
+			\begin{beamercolorbox}[wd=0.2\paperwidth, ht=.15\paperheight]{graybox}
+			\end{beamercolorbox}%
+			
+			\begin{beamercolorbox}[wd=0.2\paperwidth, ht=.15\paperheight]{yellowbox}
+			\end{beamercolorbox}%
+	\end{beamercolorbox}}
+	\begin{frame}{#1}}{\end{frame}}
+
+
+% Blank frame
+\newenvironment{frameblank}[1][]{
+	% Frame Title
+	\setbeamertemplate{frametitle}{}
+	\begin{frame}{#1}}{\end{frame}}
+
 
 % Items
 \setbeamertemplate{items}[circle]
 \setbeamertemplate{enumerate subitem}[square]
-\setbeamertemplate{itemize subitem}[default]
+\setbeamertemplate{itemize subitem}{\contour{themeblue}{$\bullet$}}
 \setbeamertemplate{sections/subsections in toc}[square]
 
 
