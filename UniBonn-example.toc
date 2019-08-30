@@ -1,3 +1,3 @@
-\beamer@sectionintoc {1}{The first section}{6}{0}{1}
-\beamer@sectionintoc {2}{The second section}{9}{0}{2}
-\beamer@sectionintoc {3}{The third section}{10}{0}{3}
+\beamer@sectionintoc {1}{Blocks and enumerations}{3}{0}{1}
+\beamer@sectionintoc {2}{Items}{6}{0}{2}
+\beamer@sectionintoc {3}{Other types of frames}{8}{0}{3}

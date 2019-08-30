@@ -12,58 +12,37 @@
 	\titlepage
 \end{frame}
 
-\begin{framecenter}
-\frametitle{Title}
-\framesubtitle{The proof uses \textit{reductio ad absurdum}.} 
-\end{framecenter}
-
-\begin{framevertical}
-	\frametitle{Title}
-	\framesubtitle{The proof uses \textit{reductio ad absurdum}.} 
-\end{framevertical}
-
-
 \begin{framecontent}
 	\frametitle{Table of contents}
-	\framesubtitle{The content of the presentation} 
+	\framesubtitle{How to use the University of Bonn beamer style} 
 \end{framecontent}
 
 
 
-\begin{frameblank}
-Eine Folie ohne Titel
-\end{frameblank}
-
-\section{The first section}
+\section{Blocks and enumerations}
 \begin{frame} 
-\frametitle{There Is No Largest Prime Number} 
-\framesubtitle{The proof uses \textit{reductio ad absurdum}.} 
+\frametitle{Blocks and enumerations} 
+\framesubtitle{How to use} 
+\begin{block}{A block}
+	This is the block content.
+\end{block}
 \begin{theorem}
-	There is no largest prime number. \end{theorem} 
+	Some theorem \end{theorem} 
 \begin{enumerate}
-	\item<1-| alert@1> Suppose $p$ were the largest prime number. 
+	\item<1-| alert@1> Some enumeration with subitems 
 	\begin{enumerate}
 		\item Subitem
 	\end{enumerate}
-	\item<2-> Let $q$ be the product of the first $p$ numbers. 
-	\item<3-> Then $q+1$ is not divisible by any of them. 
-	\item<1-> But $q + 1$ is greater than $1$, thus divisible by some prime
-	number not in the first $p$ numbers.
+	\item<2-> Second item
+	\item<3-> Third item
 \end{enumerate}
 \end{frame}
 
-\section{The second section}
-\begin{frame}
-\begin{block}{Block title}
-	Inhalt...
-\end{block}
-\end{frame}
-
-\section{The third section}
-\begin{frame}{A longer title}
+\section{Items}
+\begin{frame}{Items}
 \begin{itemize}
-\item one
-\item two
+\item First item
+\item Second item
 \end{itemize}
 \end{frame}
 
@@ -71,6 +50,26 @@ Eine Folie ohne Titel
 	\frametitle{Table of contents}
 	\framesubtitle{The content of the presentation} 
 \end{frameverticalcontent}
+
+\section{Other types of frames}
+
+\begin{framecenter}
+	\frametitle{Centered Title}
+	\framesubtitle{This is a frame with centered title} 
+\end{framecenter}
+
+\begin{framevertical}
+	\frametitle{Vertical Frame}
+	\framesubtitle{A frame with vertical boxes} 
+\end{framevertical}
+
+
+
+
+
+\begin{frameblank}
+	Frame without title
+\end{frameblank}
 
 
 \end{document}
