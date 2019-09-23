@@ -1,19 +1,34 @@
 \mode<presentation>
 
 
-\newcommand{\toptitle}[1][0.5cm]{	
+\newcommand{\toptitle}[1][0.2cm]{	
 	\vskip #1
 	\begin{beamercolorbox}[wd=\paperwidth]{}
-		\begin{beamercolorbox}[sep=1em, wd=0.8\paperwidth, ht=.15\paperheight, leftskip = 2ex]{frametitle}
+		\begin{beamercolorbox}[sep=0.75em, wd=0.84\paperwidth, ht=.1\paperheight, leftskip = 2ex]{frametitle}
 			\usebeamerfont{frametitle}\insertframetitle\par%
 			\usebeamerfont{framesubtitle}\insertframesubtitle\par%
 		\end{beamercolorbox}%
-		\begin{beamercolorbox}[wd=0.1\paperwidth, ht=.15\paperheight, leftskip = 2ex]{graybox}
+		\begin{beamercolorbox}[wd=0.08\paperwidth, ht=.1\paperheight, leftskip = 2ex]{graybox}
 		\end{beamercolorbox}%
-		\begin{beamercolorbox}[wd=0.1\paperwidth, ht=.15\paperheight, leftskip = 2ex]{yellowbox}
+		\begin{beamercolorbox}[wd=0.08\paperwidth, ht=.1\paperheight, leftskip = 2ex]{yellowbox}
 		\end{beamercolorbox}%
 	\end{beamercolorbox}
 }
+
+\newcommand{\bigtoptitle}[1][0.2cm]{	
+	\vskip #1
+	\begin{beamercolorbox}[wd=\paperwidth]{}
+		\begin{beamercolorbox}[sep=0.75em, wd=0.84\paperwidth, ht=.15\paperheight, leftskip = 2ex]{frametitle}
+			\usebeamerfont{frametitle}\insertframetitle\par%
+			\usebeamerfont{framesubtitle}\insertframesubtitle\par%
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=0.08\paperwidth, ht=.15\paperheight, leftskip = 2ex]{graybox}
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=0.08\paperwidth, ht=.15\paperheight, leftskip = 2ex]{yellowbox}
+		\end{beamercolorbox}%
+	\end{beamercolorbox}
+}
+
 
 
 % Title page
@@ -95,6 +110,12 @@
 	\setbeamertemplate{frametitle}{\toptitle[4cm]}
 	\begin{frame}{#1}}{\end{frame}}
 
+% Frame with long title
+\newenvironment{framelong}[1][]{
+	% Frame Title
+	\setbeamertemplate{frametitle}{\bigtoptitle}
+	\begin{frame}{#1}}{\end{frame}}
+
 
 % Frame for Content
 \newenvironment{framecontent}[1][]{
@@ -162,6 +183,8 @@
 \setbeamertemplate{sections/subsections in toc}[square]
 
 
+
+\newenvironment{defblock}[1][]{\begin{block}{\transparent{0.5}#1}\transparent{0.5}}{\end{block}}
 
 
 \mode
